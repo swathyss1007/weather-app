@@ -19,12 +19,17 @@
     color: whitesmoke;
 }
 
+body{
+    background: url(./Images/pikist.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .app-div{
     width: 100%;
     height: 100vh;
-    background: url(./Images/pikist.jpg) no-repeat center/cover;
     color: white;    
-
 }
 
 .search-box, .buttons{
@@ -87,7 +92,6 @@ input::placeholder{
 
 .weather-desc{
     width: fit-content;
-    /* margin-top: 5px; */
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
