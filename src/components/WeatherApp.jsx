@@ -27,6 +27,9 @@ export default function WeatherApp() {
     setPlace("")
   }
 
+  function celsius(temp){
+    return Math.round(temp-273.15)
+  }
 
   const api_key = "96c128f6e1ed8d3825c5d49dc4104a64"
 
@@ -74,13 +77,13 @@ export default function WeatherApp() {
               <img className='weather-img' src={`https://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png`} alt="" />
             </div>
             <div className='weather-desc'>
-              <h2>{info.main.temp}°F</h2>
+              <h2>{celsius(info.main.temp)}°C</h2>
               <h4 className='description'>{info.weather[0].description} </h4>
             </div>
             <div className='weather-data'>
               <div>
                 <h5 className='bold'>Wind Speed</h5>
-                <p>{info.wind.speed} mph</p>
+                <p>{info.wind.speed} m/s</p>
               </div>
               <div>
                 <h5 className='bold'>Humidity</h5>
@@ -90,6 +93,9 @@ export default function WeatherApp() {
                 <h5 className='bold'>Pressure</h5>
                 <p>{info.main.pressure} hPa</p>
               </div>
+            </div>
+            <div className="footer"> 
+              <p>{'\u00a0'}</p>
             </div>
             
           </div>
